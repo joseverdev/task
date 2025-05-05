@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  scrollbar-color: #4A5568 #2D3748;
+  overflow-y: hidden;
+}

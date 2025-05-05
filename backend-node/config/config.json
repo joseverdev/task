@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "root",
+    "password": "jose",
+    "database": "my_todo_task",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+    }
+}

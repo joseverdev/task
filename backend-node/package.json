@@ -1,0 +1,33 @@
+{
+  "name": "todo-app-b",
+  "version": "1.0.0",
+  "description": "A simple todo-app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "mgrt:gen": "sequelize-cli migration:generate --name",
+    "mgrt:run": "sequelize-cli db:migrate",
+    "mgrt:undo": "sequelize-cli db:migrate:undo",
+    "mgrt:delete": "sequelize-cli db:migrate:undo:all"
+  },
+  "author": "joselatino",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/hapi": "^21.3.12",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.5",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.37.5"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "sequelize-cli": "^6.6.2"
+  }
+}
