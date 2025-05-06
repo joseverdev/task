@@ -4,6 +4,6 @@ export default function CompletedTasks() {
   
 
   return (
-    <ListTasks />
+    <ListTasks text="Completed" />
   )
 }

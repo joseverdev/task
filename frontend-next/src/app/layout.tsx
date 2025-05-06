@@ -13,11 +13,13 @@ export default async function layout({ children }: { children: ReactNode }) {
 
   return (
     <html lang="en">
+      <head>
+        <title>Task</title>
+      </head>
+
       <body>
         <main className={`${nunito.className} bg-slate-800 h-screen`}>
-          {/* <Tasks> */}
             {children}
-          {/* </Tasks> */}
         </main>
       </body>
     </html>

@@ -4,7 +4,7 @@ export default function AllTasks() {
 
   return (
     <>
-      <ListTasks/>
+      <ListTasks text={'All'} />
     </>
   )
 }

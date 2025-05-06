@@ -4,6 +4,7 @@ import styles from './Pendig.module.css'
 import { FormData, Task } from '../../../types';
 import { TaskCtx } from '../../context/TaskCtx';
 import { usePathname } from 'next/navigation';
+import { UserCtx } from '../../context/UserCtx';
 
 const initialFormData = {
   id: 0,
@@ -11,9 +12,11 @@ const initialFormData = {
   done: false
 }
 
+interface Props {
+  text: string
+}
 
-
-export default function ListTasks() {
+export default function ListTasks({text}: Props) {
   const [newTask, setNewTask] = useState('')
   const [showEdit, setShowEdit] = useState<boolean>(false)
   const [formData, setFormData] = useState<FormData>(initialFormData)
@@ -21,12 +24,14 @@ export default function ListTasks() {
 
 
   const taskContext = useContext(TaskCtx)
+  const userContext = useContext(UserCtx)
+
   const pathname = usePathname()
   if (!taskContext) {
     return <div>Error: Task context is not available</div>
   }
   const { tasks, createTask, deleteTask, updateTask, completeTask } = taskContext
-
+  const {user} = userContext
 
   const handleUpdateSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -98,7 +103,7 @@ export default function ListTasks() {
         </div>
       }
       <div className="h-4/5 w-full bg-slate-700 rounded-sm">
-        <h1 className="text-2xl text-slate-200 text-center py-6 font-bold">All Tasks of </h1>
+        <h1 className="text-2xl text-slate-200 text-center py-6 font-bold">{text} Tasks of {user}</h1>
         <div className="w-96 mx-auto flex gap-2 mb-8 ">
           <div className="w-full border-2 has-[input:focus-within]:border-indigo-500">
             <input

@@ -15,10 +15,10 @@ export default function HomeLayout({ children }: HomeProps) {
         <div className="flex w-3/4 mx-auto">
           <UserProvider>
             <SideMenu />
+            <Tasks>
+              {children}
+            </Tasks>
           </UserProvider>
-          <Tasks>
-            {children}
-          </Tasks>
         </div>
       </section>
     </div>
